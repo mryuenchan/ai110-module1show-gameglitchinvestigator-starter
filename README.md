@@ -26,20 +26,25 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+   The game's purpose is to teach students how to identify problems and how to fix problems.
 - [ ] Detail which bugs you found.
+   1. mismatch in allowed attempts and actual attempts allowed
+   2. misleading hints
 - [ ] Explain what fixes you applied.
-
+   1. I changed the starting attempt from 1 to 0 because it should always start on attempt 0 not 1
+   2. I deleted some code that changes secret from integer to text value on even attempts. 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User enters a guess of 50
+2. Game returns "GO HIGHER"
+3. User enters a guess of 75 → "GO HIGHER"
+4. Score updates correctly after each guess
+5. Game ends after the correct guess
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
+![alt text](image.png)
 
 ## 🧪 Test Results
 

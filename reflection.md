@@ -54,5 +54,8 @@ Document at least 3 bugs you found. Add rows as needed.
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+  Testing habit and prompting strategy. I always test a fix multiple times before I move on to the next bug.
 - What is one thing you would do differently next time you work with AI on a coding task?
+  I would be more efficient when prompting. I was inefficient this time because I was inexperienced.
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  I think AI generated code is very neat and efficient. It is unlike human written code which can be all over the place because of many reasons.
