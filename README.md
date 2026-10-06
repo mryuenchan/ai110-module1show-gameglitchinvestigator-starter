@@ -25,33 +25,44 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-   The game's purpose is to teach students how to identify problems and how to fix problems.
-- [ ] Detail which bugs you found.
-   1. mismatch in allowed attempts and actual attempts allowed
-   2. misleading hints
-- [ ] Explain what fixes you applied.
-   1. I changed the starting attempt from 1 to 0 because it should always start on attempt 0 not 1
-   2. I deleted some code that changes secret from integer to text value on even attempts. 
+- [x] Describe the game's purpose.
+
+The game's purpose is to teach students how to identify bugs, use AI to help debug code, test fixes, and verify that the program works correctly.
+
+- [x] Detail which bugs you found.
+
+1. The attempt counter was incorrect, causing the game to end earlier than expected.
+2. The hints were backwards. A guess that was too high could tell the player to go higher instead of lower.
+3. The secret number was changed from an integer to a string on some attempts, which caused incorrect comparisons.
+
+- [x] Explain what fixes you applied.
+
+1. I initialized the attempt counter at 0 so the number of attempts matches what the game displays.
+2. I corrected the hint logic so a high guess says "Go LOWER!" and a low guess says "Go HIGHER!"
+3. I removed the code that converted the secret number into a string so the guess and secret stay as integers.
+4. I moved the guess-checking logic into logic_utils.py and tested it with pytest.
 ## 📸 Demo Walkthrough
 
-Describe your fixed game in numbered steps so a reader can follow along without watching a video:
-
-1. User enters a guess of 50
-2. Game returns "GO HIGHER"
-3. User enters a guess of 75 → "GO HIGHER"
-4. Score updates correctly after each guess
-5. Game ends after the correct guess
-
+1. User starts a new game and sees the allowed number range and attempts.
+2. User enters a guess of 40.
+3. If 40 is below the secret number, the game displays "Go HIGHER!"
+4. User enters another guess above the secret number, and the game displays "Go LOWER!"
+5. The score and remaining attempts update after each valid guess.
+6. User enters the correct number.
+7. The game displays the winning message and final score.
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 ![alt text](image.png)
 
 ## 🧪 Test Results
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
+```text
+python -m pytest
+
+collected 3 items
+
+tests/test_game_logic.py ...                                      [100%]
+
+3 passed in 0.04s
 ```
 
 ## 🚀 Stretch Features

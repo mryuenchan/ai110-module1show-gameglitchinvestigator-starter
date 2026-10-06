@@ -22,23 +22,26 @@ Document at least 3 bugs you found. Add rows as needed.
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)? 
-  ChatGPT
-- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
-  It suggested that "if st.session_state.attempts % 2 == 0:" changes the secret from integer to text which makes python compare them in text instead of integer values.
-- Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
-  None. Only the AI agent in VS code was very misleading not ChatGPT
+- Which AI tools did you use on this project?
+  ChatGPT and the AI coding assistant in VS Code.
+
+- Give one example of an AI suggestion that was correct.
+  ChatGPT helped me identify that changing the secret number from an integer to a string could break the comparison between the guess and the secret. I removed that unnecessary conversion. I verified the fix by running the game manually and running pytest.
+
+- Give one example of an AI suggestion that was incorrect or misleading.
+  The VS Code AI assistant suggested changes that were more complicated than what I needed, so I did not accept the suggestion exactly as written. I decided to make a smaller and more targeted change because it was easier to understand and verify. I tested my version using pytest and by playing the game manually.
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
-  I had ChatGPT going over the edited code again to make sure it is fixed and I ran the live game 3 more times and made sure that the two bugs are fixed.
-- Describe at least one test you ran (manual or using pytest)  
-  and what it showed you about your code. 
-  I ran the live test manually and it worked as expected.
+  I tested each fix multiple times instead of assuming it worked after changing the code. I ran the live Streamlit game and also used automated tests.
+
+- Describe at least one test you ran and what it showed you about your code.
+  I ran `python -m pytest` and all 3 tests passed. The tests checked a correct guess, a guess that was too low, and a guess that was too high. This showed that the main guessing logic and hints worked correctly.
+
 - Did AI help you design or understand any tests? How?
-  Yes. I ask ChatGPT to show me what's wrong and why and hints on how to fix what's wrong.
+  Yes. AI helped me understand what behavior each test should check and how pytest could verify the expected outcome automatically.
 
 ---
 
